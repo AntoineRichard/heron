@@ -14,10 +14,10 @@
       <referenceLongitude>8.9</referenceLongitude>
       <referenceHeading>90</referenceHeading>
       <referenceAltitude>0</referenceAltitude>
-      <drift>0.05 0.05 0.05</drift>
-      <gaussiannoise>0.005 0.005 0.005</gaussiannoise>
+      <drift>0.50 0.50 0.50</drift>
+      <gaussiannoise>0.05 0.05 0.05</gaussiannoise>
       <velocitydrift>0 0 0</velocitydrift>
-      <velocitygaussiannoise>0.005 0.005 0.005</velocitygaussiannoise>
+      <velocitygaussiannoise>0.05 0.05 0.05</velocitygaussiannoise>
     </plugin>
   </gazebo>
   <link name="$(arg suffix_ns)navsat_link" />
