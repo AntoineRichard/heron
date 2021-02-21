@@ -33,7 +33,7 @@
 
   <!-- If enabled, generate a Novatel Smart6 payload. -->
   <xacro:include filename="accessories/novatel_smart6.urdf.xacro" />
-  <xacro:if value="$(optenv HERON_NAVSAT_SMART6 0)">
+  <!--xacro:if value="$(optenv HERON_NAVSAT_SMART6 0)"-->
     <novatel_smart6 prefix="$(optenv HERON_NAVSAT_SMART6_MOUNT rear)" suffix_ns="$(arg suffix_ns)"/>
 
     <joint name="$(optenv HERON_NAVSAT_SMART6_MOUNT rear)_navsat_joint" type="fixed">
@@ -42,11 +42,11 @@
       <parent link="$(arg suffix_ns)base_link" />
       <child link="$(arg suffix_ns)$(optenv HERON_NAVSAT_SMART6_MOUNT rear)_navsat" />
     </joint>
-  </xacro:if>
+  <!--/xacro:if-->
 
   <!-- If enabled, generate the LASER payload. -->
   <xacro:include filename="accessories/sick_lms1xx_mount.urdf.xacro" />
-  <xacro:if value="$(optenv HERON_LASER 0)">
+  <!--xacro:if value="$(optenv HERON_LASER 0)"-->
     <sick_lms1xx_mount prefix="$(optenv HERON_LASER_MOUNT front)"
                        topic="$(optenv HERON_LASER_TOPIC front/scan)"
                        suffix_ns="$(arg suffix_ns)"/>
@@ -59,7 +59,7 @@
       <parent link="$(arg suffix_ns)rear_plate" />
       <child link="$(arg suffix_ns)$(optenv HERON_LASER_MOUNT front)_laser_mount" />
     </joint>
-  </xacro:if>
+  <!--/xacro:if-->
 
   <!-- If enabled, generate an Axis P5514 payload. -->
   <xacro:include filename="accessories/axis_ptz.urdf.xacro" />
@@ -84,9 +84,9 @@
     </joint>
   </xacro:if>
 
-  <xacro:unless value="$(optenv HERON_LASER 0)">
+  <!--xacro:unless value="$(optenv HERON_LASER 0)">
     <rear_plate type="plain" suffix_ns="$(arg suffix_ns)" />
-  </xacro:unless>
+  </xacro:unless-->
 
 
 </robot>
